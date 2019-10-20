@@ -2,8 +2,6 @@ using JuMP, Ipopt
 
 Ex_DG= Model(with_optimizer(Ipopt.Optimizer))
 
-
-
 @variable(Ex_DG,X_Feed[1:7]>=0)
 #Flowvarable
 #1: Temperature [K]

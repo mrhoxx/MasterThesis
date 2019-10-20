@@ -4,12 +4,13 @@ using JuMP, Ipopt
 
 GD=Model(with_optimizer(Ipopt.Optimizer))
 
-mutable struct Two_port_device
-    TV1
+struct Two_port_device{Real}
+    TV1::Real
     @variable(GD,xx_in[7])
     @variable(GD,xx_out[7])
 end
 
+device_2 = Two_port_device(2)
 device_1 = Two_port_device(11)
 
 
